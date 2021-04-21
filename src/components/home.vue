@@ -31,7 +31,7 @@
         <b-form-file
           v-model="fileKTP"
           :state="Boolean(fileKTP)"
-          accept="image/jpeg, image/png"
+          accept="image/jpeg, image/png, image/jpg, image/bmp"
           required
           placeholder="Choose a file or drop it here..."
           drop-placeholder="Drop file here..."
@@ -42,7 +42,7 @@
         <b-form-file
           v-model="fileKK"
           :state="Boolean(fileKK)"
-          accept="image/jpeg, image/png"
+          accept="image/jpeg, image/png, image/jpg, image/bmp"
           required
           placeholder="Choose a file or drop it here..."
           drop-placeholder="Drop file here..."
