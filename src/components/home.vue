@@ -114,7 +114,11 @@
         type="text"
         v-model="bantuan" placeholder="Enter your lainnya" />
       </div>
-      <button class="btn btn-success">Simpan</button>
+      <div class="d-flex justif-content-center text-left">
+        <input class="mt-2 mr-2" type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">Saya menyatakan bahwa data yang diisikan <br> adalah benar dan siap mempertanggungjawabkan <br> apabila ditemukan ketidaksesuaian dalam data tersebut.</label>
+      </div>
+      <button class="btn btn-success" :disabled="isDisabled">Simpan</button>
     </form>
   </div>
 </template>
@@ -149,7 +153,13 @@ export default {
         { value: 4, text: 'Lainnya' }
       ],
       lainnya: false,
-      bantuan: ''
+      bantuan: '',
+      checked: false
+    }
+  },
+  computed: {
+  	isDisabled () {
+    	return !this.checked;
     }
   },
   methods: {
