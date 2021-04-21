@@ -52,6 +52,8 @@
         <div class="text-left col-7 mb-2">
           <span><b>Alamat</b></span>
           <b-form-textarea
+          title="TIdak boleh Lebih dari 255 Karakter"
+          pattern=".{0,255}"
           required
           v-model="alamat" placeholder="Enter your address"></b-form-textarea>
         </div>
