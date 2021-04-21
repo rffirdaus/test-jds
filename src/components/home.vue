@@ -51,11 +51,13 @@
       <div class="row">
         <div class="text-left col-7 mb-2">
           <span><b>Alamat</b></span>
-          <b-form-textarea
+          <textarea
           title="TIdak boleh Lebih dari 255 Karakter"
-          pattern=".{0,255}"
+          pattern=".{,255}"
+          maxlength="255"
           required
-          v-model="alamat" placeholder="Enter your address"></b-form-textarea>
+          class="form-control"
+          v-model="alamat" placeholder="Enter your address"></textarea>
         </div>
         <div class="text-left col-4 mb-2">
           <span><b>Umur</b></span>
@@ -174,7 +176,6 @@ export default {
     },
     formSubmit (e) {
       e.preventDefault()
-      console.log('sdfsdfds')
       let bantuan = ''
       if (this.selectedbantuan == 4) {
         bantuan = this.bantuan
@@ -199,9 +200,9 @@ export default {
       console.log(data)
       let databaru = Math.random(data)
       if (databaru < 1500) {
-        console.log('sukses')
+        console.log(databaru,'sukses')
       } else {
-        console.log('gagal')
+        console.log(databaru,'gagal')
       }
     }
   }
